@@ -31,3 +31,7 @@ export type TodoListItemProps = {
 export type TCreateTodo = Omit<ITodo, 'id'>;
 export type TToggleTodo = Pick<ITodo, 'id' | 'checked'>;
 export type TDeleteTodo = Pick<ITodo, 'id'>;
+
+export type TodoErrorProps = {
+  error: string;
+};
