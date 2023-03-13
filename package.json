@@ -38,7 +38,8 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.8.4"
+    "prettier": "2.8.4",
+    "tailwindcss": "^3.2.7"
   },
   "prettier": {
     "singleQuote": true,

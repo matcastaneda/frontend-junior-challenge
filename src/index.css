@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins antialiased m-0 bg-slate-50 text-base text-slate-600 leading-6 w-full min-h-screen min-w-[320px] scroll-smooth;
+  }
+}
