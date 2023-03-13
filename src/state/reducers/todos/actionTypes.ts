@@ -5,6 +5,7 @@ const actionType = {
   ADD_TODO: `${NAME_REDUCER.todos}/addTodo`,
   TOGGLE_TODO: `${NAME_REDUCER.todos}/toggleTodo`,
   DELETE_TODO: `${NAME_REDUCER.todos}/deleteTodo`,
+  CLEAR_ERROR: `${NAME_REDUCER.todos}/clearError`,
 };
 
 export default actionType;

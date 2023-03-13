@@ -43,6 +43,10 @@ const todoSlice = createSlice({
       state.todos = state.todos.filter(todo => todo.id !== id);
     });
 
+    builder.addCase(actions.clearError, state => {
+      state.error = null;
+    });
+
     // Match any action that ends in '/pending'
     builder.addMatcher<TPendingAction>(
       (action): action is TPendingAction => action.type.endsWith('/pending'),
@@ -67,7 +71,7 @@ const todoSlice = createSlice({
       (state, action) => {
         const status = action.error.code === 'ERR_BAD_REQUEST' ? 404 : 500;
         state.loading = 'failed';
-        state.error = `[${action.error.name}]: Request failed with status ${status}. Remember that the API is read-only.`;
+        state.error = `[Error]: Request failed with status ${status}. Remember that the API is read-only.`;
       },
     );
 

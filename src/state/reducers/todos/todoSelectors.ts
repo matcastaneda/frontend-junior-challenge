@@ -6,4 +6,9 @@ const selectTodosCompleted = createSelector(
   todos => todos.todos.filter(todo => todo.checked).length,
 ) as (state: RootState) => number;
 
-export { selectTodosCompleted };
+const selectTodos = createSelector(
+  (state: RootState) => state.todos,
+  todos => todos.todos.length - todos.todos.filter(todo => todo.checked).length,
+) as (state: RootState) => number;
+
+export { selectTodosCompleted, selectTodos };
