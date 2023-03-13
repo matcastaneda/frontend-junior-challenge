@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import actionType from './actionTypes';
 
 import { todosService } from 'api/services/todos';
@@ -27,6 +27,8 @@ const deleteTodo = createAsyncThunk<number, TDeleteTodo>(actionType.DELETE_TODO,
   return id;
 });
 
-const actions = { getTodos, addTodo, toggleTodo, deleteTodo };
+const clearError = createAction(actionType.CLEAR_ERROR);
+
+const actions = { getTodos, addTodo, toggleTodo, deleteTodo, clearError };
 
 export default actions;
